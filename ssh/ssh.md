@@ -61,3 +61,14 @@ ssh-copy-id -i <public_key_path>
 
 After that, you can be authenticate in remote server without password
 
+# Custom key name authentication
+
+If you created an custom name key, your ssh client will need some configuration in order to recognize custom name key. In "$HOME/.ssh/config" file add the following:
+~~~bash
+Host <host_server>
+  HostName <host_name>
+  User <user_server>
+  PreferredAuthentications publickey
+  IdentityFile <key_path>
+~~~
+Note. If config file does not exits. You must create it.
